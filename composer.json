@@ -1,0 +1,12 @@
+{
+  "name": "vongola12324/laravel-insightvm-api",
+  "description": "An API Client for Rapid7 InsightVM.",
+  "minimum-stability": "stable",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Vongola",
+      "email": "vongola12324@coder.tw"
+    }
+  ]
+}
