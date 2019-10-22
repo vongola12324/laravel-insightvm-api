@@ -1,12 +1,51 @@
 {
   "name": "vongola12324/laravel-insightvm-api",
   "description": "An API Client for Rapid7 InsightVM.",
+  "type": "library",
   "minimum-stability": "stable",
   "license": "MIT",
+  "keywords":[
+    "laravel", "insightvm", "nexpose", "api", "client"
+  ],
   "authors": [
     {
       "name": "Vongola",
       "email": "vongola12324@coder.tw"
     }
-  ]
+  ],
+  "autoload": {
+    "psr-4": {
+      "Vongola\\InsightVmApi\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Vongola\\InsightVmApi\\Test\\": "tests/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Vongola\\InsightVmApi\\ServiceProvider"
+      ],
+      "aliases": {
+        "Insightvm": "Vongola\\InsightVmApi\\Facades",
+        "Nexpose": "Vongola\\InsightVmApi\\Facades"
+      }
+    }
+  },
+  "require": {
+    "php": ">7.2",
+    "guzzlehttp/guzzle": "~6.0",
+    "illuminate/support": "^5.0|^6.0",
+    "illuminate/container": "^5.0|^6.0",
+    "illuminate/config": "^5.0|^6.0",
+    "spomky-labs/otphp": "^10.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^7.0"
+  },
+  "scripts": {
+    "test": "phpunit"
+  }
 }
