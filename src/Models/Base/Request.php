@@ -12,7 +12,7 @@ class Request
 {
     protected $httpClient;
     protected $header;
-    protected $action;
+    protected $nextAction;
 
     /**
      * Request constructor.
@@ -21,16 +21,16 @@ class Request
     public function __construct($sendable)
     {
         $this->httpClient = new HttpClient();
-        $this->action = $sendable;
-        $ApiClient = $this->action->getClient();
-        $this->prepareHeader($ApiClient->getAuthorization(), $ApiClient->getOtpAccessToken());
+        $apiClient = $sendable->getClient();
+        $this->nextAction = $apiClient->getNextAction();
+        $this->prepareHeader($apiClient->getAuthorization(), $apiClient->getOtpAccessToken());
     }
 
     public function send()
     {
         try {
             $response = $this->httpClient->request(
-                $this->action->getFullUrl(), $this->action['url'], $this->action['extra']
+                $this->nextAction['method'], $this->nextAction['url'], $this->nextAction['data']
             );
         } catch (GuzzleException $e) {
             Log::error($e->getMessage(), $e->getTrace());

@@ -3,8 +3,8 @@
 return [
     /**
      * The url point to InsightVM/Nexpose API.
-     * Do not include "api/v3", your url should look like "https://<host>:<port>".
-     * For example: "https://127.0.0.1:3780"
+     * Your url should look like "https://<host>:<port>/api/3/".
+     * For example: "https://127.0.0.1:3780/api/3/"
      */
     'url' => env('INSIGHTVM_URL', null),
 
