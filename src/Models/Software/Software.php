@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Vongola\InsightVmApi\Models\Software;
-
 
 use Exception;
 use Vongola\InsightVmApi\Models\Base\Client;
@@ -27,7 +25,7 @@ class Software extends Sendable
             if ($idOrPage !== null) {
                 $this->client->pushNextPath($idOrPage);
             }
-        } else if (count($vars) === 2) {
+        } elseif (count($vars) === 2) {
             $this->client->setNextQueryData([
                 'page' => $idOrPage,
                 'size' => $vars[0],

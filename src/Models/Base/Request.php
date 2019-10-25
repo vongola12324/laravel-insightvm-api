@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Vongola\InsightVmApi\Models\Base;
-
 
 use GuzzleHttp\Client as HttpClient;
 use GuzzleHttp\Exception\GuzzleException;
@@ -30,7 +28,9 @@ class Request
     {
         try {
             $response = $this->httpClient->request(
-                $this->nextAction['method'], $this->nextAction['url'], $this->nextAction['data']
+                $this->nextAction['method'],
+                $this->nextAction['url'],
+                $this->nextAction['data']
             );
         } catch (GuzzleException $e) {
             Log::error($e->getMessage(), $e->getTrace());
@@ -39,7 +39,8 @@ class Request
         return $response;
     }
 
-    private function prepareHeader($authorization, $otpToken) {
+    private function prepareHeader($authorization, $otpToken)
+    {
         $header = [
             'Accept' => 'application/json',
             'Accept-Encoding' => 'deflate, gzip',

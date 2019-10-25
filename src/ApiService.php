@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Vongola\InsightVmApi;
-
 
 use Vongola\InsightVmApi\Models\Base\Request;
 use Vongola\InsightVmApi\Models\Base\Response;

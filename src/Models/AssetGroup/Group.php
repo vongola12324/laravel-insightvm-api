@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Vongola\InsightVmApi\Models\AssetGroup;
-
 
 use Exception;
 use Vongola\InsightVmApi\Models\Base\Client;
@@ -46,21 +44,22 @@ class Group extends Sendable
      * Creates a new asset group.
      * @param string|null $name
      * @param string|null $type
-     * @param string $description
-     * @param array $searchCriteria
-     * @param array $vulnerabilities
+     * @param string $desc
+     * @param array|null $criteria
+     * @param array|null $vuln
      * @return Response
      * @throws Exception
      */
-    public function create(string $name, string $type, string $description = null, array $searchCriteria = null, array $vulnerabilities = null) {
+    public function create(string $name, string $type, string $desc = null, array $criteria = null, array $vuln = null)
+    {
         $this->checkParameter(true);
         $this->client->setNextMethod('POST');
         $this->client->setNextFormData([
             'name' => $name,
             'type' => $type,
-            'description' => null,
-            'searchCriteria' => null,
-            'vulnerabilities' => $vulnerabilities,
+            'description' => $desc,
+            'searchCriteria' => $criteria,
+            'vulnerabilities' => $vuln,
         ]);
         return $this->get();
     }
@@ -69,26 +68,26 @@ class Group extends Sendable
      * Updates the details of an asset group.
      * @param string $name
      * @param string $type
-     * @param string|null $description
-     * @param array|null $searchCriteria
-     * @param array|null $vulnerabilities
+     * @param string|null $desc
+     * @param array|null $criteria
+     * @param array|null $vuln
      * @return Response
      * @throws Exception
      */
-    public function update(string $name, string $type, string $description = null, array $searchCriteria = null, array $vulnerabilities = null)
+    public function update(string $name, string $type, string $desc = null, array $criteria = null, array $vuln = null)
     {
         $this->checkParameter();
         $this->client->setNextMethod('PUT');
         $this->client->setNextFormData([
             'name' => $name,
             'type' => $type,
-            'description' => null,
-            'searchCriteria' => null,
-            'vulnerabilities' => $vulnerabilities,
+            'description' => $desc,
+            'searchCriteria' => $criteria,
+            'vulnerabilities' => $vuln,
         ]);
         return $this->get();
     }
-    
+
     /**
      * Deletes the asset group.
      * @return Response
@@ -116,7 +115,7 @@ class Group extends Sendable
      * @return SearchCriteria
      * @throws Exception
      */
-    public function search_criteria()
+    public function searchCriteria()
     {
         $this->checkParameter();
         return new SearchCriteria($this->getClient());

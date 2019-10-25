@@ -28,15 +28,14 @@ class InsightVmApiServiceProvider extends ServiceProvider
     public function register()
     {
         $this->mergeConfigFrom(
-            __DIR__ . '/../config/insightvm.php', 'insightvm'
+            __DIR__ . '/../config/insightvm.php',
+            'insightvm'
         );
-        $this->app->singleton('Nexpose', function($app)
-        {
-            return new Client;
+        $this->app->singleton('Nexpose', function ($app) {
+            return new Client();
         });
-        $this->app->singleton('Insightvm', function($app)
-        {
-            return new Client;
+        $this->app->singleton('Insightvm', function ($app) {
+            return new Client();
         });
     }
 }

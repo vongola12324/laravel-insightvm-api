@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Vongola\InsightVmApi\Models\Base;
-
 
 use Exception;
 use Illuminate\Support\Facades\Config;
@@ -76,7 +74,7 @@ class Client
     public static function getInstance()
     {
         if (self::$instance === null) {
-            self::$instance = new self;
+            self::$instance = new self();
         }
         return self::$instance;
     }

@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Vongola\InsightVmApi\Models\Base;
 
 use Vongola\InsightVmApi\ApiService;
@@ -33,6 +32,7 @@ class Sendable
         return $response;
     }
 
-    protected function checkParameter(){}
-
+    protected function checkParameter()
+    {
+    }
 }

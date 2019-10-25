@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Vongola\InsightVmApi\Models\Asset;
 
 use Exception;
@@ -181,5 +180,4 @@ class Asset extends Sendable
         }
         return $this->get();
     }
-
 }

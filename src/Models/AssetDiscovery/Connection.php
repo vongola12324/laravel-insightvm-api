@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Vongola\InsightVmApi\Models\AssetDiscovery;
-
 
 use Exception;
 use Vongola\InsightVmApi\Models\Base\Client;

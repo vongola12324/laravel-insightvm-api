@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Vongola\InsightVmApi\Models;
 
 use Vongola\InsightVmApi\ApiService;
