@@ -29,7 +29,7 @@ class Tag extends Sendable
     }
 
     /**
-     * Check If assetId null
+     * Check If tagId null
      * @param bool $paramMustNull
      * @throws Exception
      */

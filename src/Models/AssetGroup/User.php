@@ -16,7 +16,7 @@ class User extends Sendable
     /**
      * Tag constructor.
      * @param Client $client
-     * @param int|null $tagId
+     * @param int|null $userId
      */
     public function __construct(Client $client, int $userId = null)
     {
@@ -29,7 +29,7 @@ class User extends Sendable
     }
 
     /**
-     * Check If assetId null
+     * Check If userId null
      * @param bool $paramMustNull
      * @throws Exception
      */
